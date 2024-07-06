@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Titillium+Web:wght@300&family=Work+Sans:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&display=swap');
+
+body {
+    font-family: 'Work Sans';
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(49, 70, 88);
+}
+
+/* * { border: 1px solid red; } */
+
+
+h1 {
+    margin: auto;
+    text-align: center;
+    padding: 100px 0 0;
+    font-weight: 400;
+    font-size: 50px;
+    color: whitesmoke;
+}
+
+/* h3 {
+    margin: auto;
+    padding: 78px 0;
+    text-align: center;
+    font-weight: 300;
+    font-size: 30px;
+    color: rgb(49, 70, 88);
+} */
+
+h4 {
+    color: white;
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+#spinner-north {
+    font-size: 30px;
+    margin: 5px;
+    grid-row: 1;
+    grid-column: 2;
+    text-align: center;
+    padding-bottom: 75px;
+}
+
+#spinner-east {
+    transform: rotate(90deg);
+    grid-column: 3;
+    grid-row: 2;
+    margin-right: 20px;
+}
+
+#spinner-south {
+    grid-row: 3;
+    grid-column: 2;
+    align-self: flex-end;
+}
+
+#spinner-west {
+    transform: rotate(-90deg);
+    grid-column: 1;
+    grid-row: 2;
+    margin-left: 20px;
+}
+
+p {
+    padding: 20px;
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    font-weight: 300;
+    color: darkgray;
+}
+
+image {
+    width: 100%;
+    height: 100%;
+}
+
+#spinner {
+    margin: 150px auto;
+    height: 175px;
+    width: 175px;
+    display: grid;
+    justify-content: space-evenly;
+    align-content: center;
+    text-align: center;
+    grid-template-rows: 100px 100px 100px;
+    grid-template-columns: 150px 100px 150px;
+    grid-gap: 5px 0px;
+    border-radius: 50%;
+    background-color: whitesmoke;
+    color: whitesmoke;
+}
