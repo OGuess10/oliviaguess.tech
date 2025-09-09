@@ -49,6 +49,6 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to top, #030432, #0E285C);
+  background: linear-gradient(to top, #FFF, #DCEFFF);
   z-index: -1;
 }
