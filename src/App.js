@@ -1,5 +1,5 @@
 import './App.css';
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, useId } from "react";
 import { useSwipeable } from 'react-swipeable';
 import { ReactTyped } from 'react-typed';
 
@@ -101,50 +101,55 @@ function Header({scrollToRef, homeRef, aboutRef,  skillsRef, projectsRef, contac
     </div>
 
     {/* Mobile popout menu */}
-    <div className="fixed top-0 left-0 z-50 m-8 p-0 xl:hidden justify-center items-center flex flex-col bg-powderblue border-white border-2 rounded-full w-24">
-
-      <button onClick={toggleMobileMenu} className="size-10 my-1 px-2 text-navy text-4xl font-sans rounded-full justify-self-start align hover:bg-white transition-all duration-300">
+   <div
+    className={`fixed top-0 left-0 z-50 m-8 p-0 xl:hidden rounded-full w-24 transition-all duration-500
+    ${mobileMenuOpen ? "border-white border-2 bg-powderblue shadow-xl border-opacity-100" : "border-opacity-0 delay-[650ms]"}`}
+  >
+    <div
+      className={`flex flex-col justify-start items-center overflow-hidden transition-[max-height] duration-1000 ease-in-out
+        ${mobileMenuOpen ? "max-h-[500px]" : "max-h-16"}`}
+    >
+      <button onClick={toggleMobileMenu} className={`size-10 my-1 px-2 pb-10 text-navy text-4xl font-sans rounded-full justify-self-start align hover:bg-white transition-all duration-300 bg-powderblue
+      ${mobileMenuOpen ? "border-0 hover:shadow-lg" : "border-white border-2 shadow-lg"}`}>
         <p className="relative -top-1">&#8801;</p>
       </button>
 
-      <div className={`flex flex-col overflow-hidden transition-all duration-1000 ease-in-out
-      ${mobileMenuOpen ? "max-h-[500px]" : "max-h-0"}`}>
-        <button
-          className="text-navy font-sans text-sm px-2 hover:bg-white py-2 rounded-full transition-all duration-300 hover:shadow-lg"
-          onClick={() => {
-            scrollToRef(homeRef);
-            toggleMobileMenu();
-          }
-        }>HOME</button>
-        <button
-          className="text-navy text-sm font-sans my-2 hover:bg-white py-2 px-2 rounded-full transition-all duration-300 hover:shadow-lg"
-          onClick={() => {
-            scrollToRef(aboutRef);
-            toggleMobileMenu();
-          }
-        }>ABOUT</button>
-        <button
-          className="text-navy text-sm font-sans my-2 hover:bg-white py-2 px-2 rounded-full transition-all duration-300 hover:shadow-lg"
-          onClick={() => {
-            scrollToRef(skillsRef);
-            toggleMobileMenu();
-          }
-        }>SKILLS</button>
-        <button
-          className="text-navy text-sm font-sans my-2 hover:bg-white py-2 px-2 rounded-full transition-all duration-300 hover:shadow-lg"
-          onClick={() => {
-            scrollToRef(projectsRef);
-            toggleMobileMenu();
-          }
-        }>PROJECTS</button>
-        <button
-          className="text-navy text-sm font-sans my-2 hover:bg-white py-2 px-2 mb-5 rounded-full transition-all duration-300 hover:shadow-lg"
-          onClick={() => {
-            scrollToRef(aboutRef);
-            toggleMobileMenu();
-          }
-        }>CONTACT</button>
-      </div>
+      <button
+        className="text-navy font-sans text-sm px-2 hover:bg-white py-2 rounded-full transition-all duration-300 hover:shadow-lg"
+        onClick={() => {
+          scrollToRef(homeRef);
+          toggleMobileMenu();
+        }
+      }>HOME</button>
+      <button
+        className="text-navy text-sm font-sans my-2 hover:bg-white py-2 px-2 rounded-full transition-all duration-300 hover:shadow-lg"
+        onClick={() => {
+          scrollToRef(aboutRef);
+          toggleMobileMenu();
+        }
+      }>ABOUT</button>
+      <button
+        className="text-navy text-sm font-sans my-2 hover:bg-white py-2 px-2 rounded-full transition-all duration-300 hover:shadow-lg"
+        onClick={() => {
+          scrollToRef(skillsRef);
+          toggleMobileMenu();
+        }
+      }>SKILLS</button>
+      <button
+        className="text-navy text-sm font-sans my-2 hover:bg-white py-2 px-2 rounded-full transition-all duration-300 hover:shadow-lg"
+        onClick={() => {
+          scrollToRef(projectsRef);
+          toggleMobileMenu();
+        }
+      }>PROJECTS</button>
+      <button
+        className="text-navy text-sm font-sans my-2 hover:bg-white py-2 px-2 mb-5 rounded-full transition-all duration-300 hover:shadow-lg"
+        onClick={() => {
+          scrollToRef(aboutRef);
+          toggleMobileMenu();
+        }
+      }>CONTACT</button>
+    </div>
     </div>
 
     {mobileMenuOpen && (
@@ -318,6 +323,22 @@ function Cards() {
   );
 }
 
+function Circles({image, text, overrides=""}){
+
+  return (
+    <div className="relative group h-[100px] w-[100px] bg-white shadow-xl rounded-full p-2 my-2 mx-4 motion-safe:animate-float select-none hover:z-10">
+      <div className="w-full h-full border-2 border-lightgold rounded-full p-2">
+        <img src={image} alt={text} className={`object-contain h-full w-full ${overrides}`} />
+      </div>
+
+      <p className="absolute top-full left-1/2 -translate-x-1/2 bg-powderblue text-navy text-md rounded-xl px-2 py-1 opacity-0 translate-y-0 group-hover:opacity-100 group-hover:translate-y-2 transition-all duration-300">
+        {text}
+      </p>
+    </div>
+
+  );
+}
+
 function App() {
 
   const homeRef = useRef(null);
@@ -359,7 +380,7 @@ function App() {
       {/* About Page */}
       <section
         ref={aboutRef}
-        className="w-screen h-screen justify-center items-center flex p-10">
+        className="min-w-screen min-h-screen justify-center items-center flex p-10">
           {/* Body */}
           <div className="w-full h-full gap-y-5 grid grid-cols-1 grid-rows-3 md:gap-x-5 md:grid-cols-3 md:grid-rows-1 md:gap-y-0">
 
@@ -378,7 +399,7 @@ function App() {
                 [&::-webkit-scrollbar-thumb]:border-white
                 [&::-webkit-scrollbar-thumb]:border-solid"
               >
-                <p className="text-navy text-7xl font-serif font-bold my-8">About</p>
+                <p className="text-navy text-7xl font-serif font-bold mb-8">About</p>
                 <p className="text-navy text-xl font-sans my-4">Hello, I'm Olivia, a Master's student in Computer Science at Washington University in St. Louis.</p>
                 <p className="text-navy text-xl font-sans my-4">I am a passionate and driven student and researcher. I am currently seeking full-time, remote job opportunities in software engineering, web-development, game development, and UI/UX design.</p>
                 <p className="text-navy text-xl font-sans my-4">
@@ -397,61 +418,9 @@ function App() {
                   <a href="https://www.garmin.com/en-US/" target="_blank" className="text-naby text-xl font-sans underline decoration-1 hover:text-lightgold">Garmin International, Inc.</a>
                   {' '}located in Olathe, Kansas. I worked as a software engineer intern and worked to develop embedded software on smartwatches.
                 </p>
-                {/* <p className="text-navy text-xl font-sans my-4">
-                  Through my research, education, and professional experiences, I have gained technical skills in:
+                <p className="text-navy text-xl font-sans my-4">
+                  Outside of my research and education, I like to spend my free time taking ballet lessons at my local dance studio, writing stories, and playing video games with my friends.
                 </p>
-                <ul className="text-navy text-lg list-disc font-sans px-10 my-4">
-                  <li><b>Web Development</b>
-                    <ul className="flex flex-row gap-12">
-                      <li><i>Languages:</i>
-                        <ul className="ml-6">
-                          <li>HTML</li>
-                          <li>CSS</li>
-                          <li>JavaScript</li>
-                          <li>TSX</li>
-                        </ul>
-                      </li>
-                      <li><i>Frameworks/Tools:</i>
-                        <ul className="ml-6">
-                          <li>React</li>
-                          <li>React Native</li>
-                          <li>Tailwind</li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </li>
-                  <li><b>Embedded Devices</b>
-                    <ul className="flex flex-row gap-12">
-                      <li><i>Languages:</i>
-                        <ul className="ml-6">
-                          <li>C++</li>
-                        </ul>
-                      </li>
-                      <li><i>Hardware:</i></li>
-                      <li><i>Arduino, C++</i></li>
-                      <li>Arduino</li>
-                      <li>Smartwatches</li>
-                      
-                    </ul>
-                  </li>
-                  <li>
-                    <b>Software Application Development</b>
-                    <ul>
-                      <li>Windows Forms</li>
-                      <li>iOS Applications</li>
-                    </ul>
-                  </li>
-                  <li><b>Windows Forms</b> (C#, C)</li>
-                  <li><b>Python</b></li>
-                  <li><b>Unity</b></li>
-                  <li><b>Databases</b> (SQL, MySQL, AmazonDB, PHP)</li>
-                  <li><b>MATLAB</b></li>
-                  <li><b>Wolfram Mathematica</b></li>
-                  <li><b>Linux Virtual Machine</b></li>
-                  <li><b>Adobe Creative Suite</b></li>
-                  <li><b>Figma</b></li>
-                  <li><b>Microsoft Office</b></li>
-                </ul> */}
               </div>
             </div>
           </div>
@@ -460,12 +429,36 @@ function App() {
       {/* Skills Page */}
       <section
         ref={skillsRef}
-        className="w-screen h-screen justify-center items-center flex p-10">
-          {/* Body */}
-          <div className="h-full w-full flex items-center px-10 flex my-10">
-            
+        className="min-w-screen min-h-screen justify-center items-center flex p-10 my-8 py-24 flex-col">
+          <p className="text-7xl font-serif text-navy font-bold flex w-full justify-start">My Skills</p>
+          <div className="w-full flex flex-col items-center p-8 bg-white rounded-xl shadow-xl my-8">
+            <p className="text-navy text-3xl font-serif flex justify-self-start self-start w-full">Technical Languages</p>
+            <div className="w-5/6 h-full flex flex-wrap my-5 justify-center">
+              <Circles className="group group-hover:z-50" image={process.env.PUBLIC_URL + '/icons/Python-04.svg'} text={'Python'}/>
+              <Circles image={process.env.PUBLIC_URL + '/icons/C-01.svg'} text={'C/C++'}/>
+              <Circles image={process.env.PUBLIC_URL + '/icons/C-Sharp-01.svg'} text={'C#'}/>
+              <Circles image={process.env.PUBLIC_URL + '/icons/JavaScript-01.svg'} text={'JavaScript'} overrides={'p-2'}/>
+              <Circles image={process.env.PUBLIC_URL + '/icons/Swift-01.svg'} text={'Swift'} overrides={'pr-2'}/>
+            </div>
           </div>
-
+          <div className="w-full flex flex-col items-center p-8 bg-white rounded-xl shadow-xl">
+            <p className="text-navy text-3xl font-serif flex justify-self-start self-start w-full">Technologies and Frameworks</p>
+            <div className="w-5/6 h-full flex flex-wrap my-5 justify-center">
+              <Circles image={process.env.PUBLIC_URL + '/icons/React-01.svg'} text={'React'}/>
+              <Circles image={process.env.PUBLIC_URL + '/icons/Logo_D3.png'} text={'D3'}/>
+              <Circles image={process.env.PUBLIC_URL + '/icons/winforms-logo.png'} text={'WinForms'}/>
+              <Circles image={process.env.PUBLIC_URL + '/icons/Arduino-01.svg'} text={'Arduino'}/>
+              <Circles image={process.env.PUBLIC_URL + '/icons/Github-22.svg'} text={'GitHub/Github Issues'}/>
+              <Circles image={process.env.PUBLIC_URL + '/icons/Git-06.svg'} text={'Git'}/>
+              <Circles image={process.env.PUBLIC_URL + '/icons/Unity-01.svg'} text={'Unity'} overrides={'pr-2'}/>
+              <Circles image={process.env.PUBLIC_URL + '/icons/Flask-06.svg'} text={'Flask'}/>
+              <Circles image={process.env.PUBLIC_URL + '/icons/Mysql-02.svg'} text={'MySQL/SQL'} overrides={'p-2'}/>
+              <Circles image={process.env.PUBLIC_URL + '/icons/Wolfram-mathematica-01.svg'} text={'Wolfram Mathematica'}/>
+              <Circles image={process.env.PUBLIC_URL + '/icons/Linux-ubuntu-01.svg'} text={'Ubuntu/Linux'} overrides={'pr-2'}/>
+              <Circles image={process.env.PUBLIC_URL + '/icons/Figma-01.svg'} text={'Figma'}/>
+              <Circles image={process.env.PUBLIC_URL + '/icons/Adobe-02.svg'} text={'Adobe Creative Suite'} overrides={'p-1'}/>
+            </div>
+          </div>
       </section>
 
       {/* Projects Page */}
