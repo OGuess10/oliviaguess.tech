@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/oliviaguess.tech/static/css/main.b49e0658.css",
+    "main.js": "/oliviaguess.tech/static/js/main.f5b61c07.js",
+    "static/js/453.1407b060.chunk.js": "/oliviaguess.tech/static/js/453.1407b060.chunk.js",
+    "static/media/chicago-pic.png": "/oliviaguess.tech/static/media/chicago-pic.4adef39ba4363371e178.png",
+    "static/media/professional-photo.png": "/oliviaguess.tech/static/media/professional-photo.c3427c898c26318d10ef.png",
+    "index.html": "/oliviaguess.tech/index.html",
+    "main.b49e0658.css.map": "/oliviaguess.tech/static/css/main.b49e0658.css.map",
+    "main.f5b61c07.js.map": "/oliviaguess.tech/static/js/main.f5b61c07.js.map",
+    "453.1407b060.chunk.js.map": "/oliviaguess.tech/static/js/453.1407b060.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b49e0658.css",
+    "static/js/main.f5b61c07.js"
+  ]
+}
