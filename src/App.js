@@ -95,7 +95,7 @@ function Header({scrollToRef, homeRef, aboutRef,  skillsRef, projectsRef, contac
           onClick={() => scrollToRef(projectsRef)}>PROJECTS</button>
         <button
           className="text-navy text-lg font-sans px-10 mx-2 hover:bg-white py-2 rounded-full transition-all duration-300 hover:shadow-lg"
-          onClick={() => scrollToRef(aboutRef)}>CONTACT</button>
+          onClick={() => scrollToRef(contactRef)}>CONTACT</button>
       </div>
       <div className="col-span-2"></div>
     </div>
@@ -145,7 +145,7 @@ function Header({scrollToRef, homeRef, aboutRef,  skillsRef, projectsRef, contac
       <button
         className="text-navy text-sm font-sans my-2 hover:bg-white py-2 px-2 mb-5 rounded-full transition-all duration-300 hover:shadow-lg"
         onClick={() => {
-          scrollToRef(aboutRef);
+          scrollToRef(contactRef);
           toggleMobileMenu();
         }
       }>CONTACT</button>
@@ -686,7 +686,66 @@ function App() {
       {/* Contact Page */}
       <section
         ref={contactRef}
-        className="w-screen h-screen justify-center items-center flex flex-col p-10">
+        className="min-w-screen min-h-screen justify-center items-center flex p-10 my-8 py-24 flex-col">
+          <p className="text-7xl font-serif text-navy font-bold flex w-full justify-start">Let's get in touch!</p>
+          <div className="w-full flex flex-col items-center p-8 bg-white rounded-xl shadow-xl my-8">
+            <p className="text-navy text-3xl font-serif flex justify-self-start self-start w-full">Contact me:</p>
+            <div className="flex w-full justify-around items-center p-4 pt-8 flex-wrap gap-4">
+
+              <div className="motion-safe:animate-float rounded-full h-[150px] w-[150px] flex">
+                <a
+                  className="h-[150px] w-[150px] bg-white shadow-xl rounded-full p-2 hover:scale-110 transition-all duration-300"
+                  aria-label="LinkedIn Profile"
+                  href="https://www.linkedin.com/in/olivia-guess" target="_blank" rel="noreferrer"
+                >
+                  <div className="flex flex-col gap-2 w-full h-full border-2 border-lightgold rounded-full p-2 justify-center items-center">
+                    <p className="text-navy text-xl font-sans">LinkedIn</p>
+                    <img src={process.env.PUBLIC_URL + '/icons/Linkedin-13.svg'} alt="LinkedIn" className="h-[50px] w-[50px]" />
+                  </div>
+                </a>
+              </div>
+
+              <div className="motion-safe:animate-float rounded-full h-[150px] w-[150px] flex">
+                <a
+                  className="h-[150px] w-[150px] bg-white shadow-xl rounded-full p-2 hover:scale-110 transition-all duration-300"
+                  aria-label="GitHub Profile"
+                  href="https://github.com/OGuess10" target="_blank" rel="noreferrer"
+                >
+                  <div className="flex flex-col gap-2 w-full h-full border-2 border-lightgold rounded-full p-2 justify-center items-center">
+                    <p className="text-navy text-xl font-sans">GitHub</p>
+                    <img src={process.env.PUBLIC_URL + '/icons/Github-22.svg'} alt="GitHub" className="h-[50px] w-[50px]" />
+                  </div>
+                </a>
+              </div>
+
+              <div className="motion-safe:animate-float rounded-full h-[150px] w-[150px] flex">
+                <a
+                  className="h-[150px] w-[150px] bg-white shadow-xl rounded-full p-2 hover:scale-110 transition-all duration-300"
+                  aria-label="Resume"
+                  href="" target="_blank" rel="noreferrer"
+                >
+                  <div className="flex flex-col gap-2 w-full h-full border-2 border-lightgold rounded-full p-2 justify-center items-center">
+                    <p className="text-navy text-xl font-sans">Resume</p>
+                    <img src={process.env.PUBLIC_URL + '/icons/File-earmark-text-01.svg'} alt="Resume" className="h-[50px] w-[50px]" />
+                  </div>
+                </a>
+              </div>
+
+              <div className="motion-safe:animate-float rounded-full h-[150px] w-[150px] flex">
+                <a
+                  className="h-[150px] w-[150px] bg-white shadow-xl rounded-full p-2 hover:scale-110 transition-all duration-300"
+                  aria-label="Email Address"
+                  href="mailto:guesso.olivia@gmail.com" target="_blank" rel="noreferrer"
+                >
+                  <div className="flex flex-col gap-2 w-full h-full border-2 border-lightgold rounded-full p-2 justify-center items-center">
+                    <p className="text-navy text-xl font-sans">Email</p>
+                    <img src={process.env.PUBLIC_URL + '/icons/Paper-plane-11.svg'} alt="Email" className="h-[50px] w-[50px]" />
+                  </div>
+                </a>
+              </div>
+
+            </div>
+          </div>
       </section>
 
     </div>
