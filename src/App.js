@@ -102,7 +102,7 @@ function Header({scrollToRef, homeRef, aboutRef,  skillsRef, projectsRef, contac
 
     {/* Mobile popout menu */}
    <div
-    className={`fixed top-0 left-0 z-50 m-8 p-0 xl:hidden rounded-full w-24 transition-all duration-500
+    className={`fixed top-0 left-0 z-50 my-4 mx-0 sm:m-8 p-0 xl:hidden rounded-full w-24 transition-all duration-500
     ${mobileMenuOpen ? "border-white border-2 bg-powderblue shadow-xl border-opacity-100" : "border-opacity-0 delay-[700ms]"}`}
   >
     <div
@@ -247,7 +247,7 @@ function Cards() {
         <div>
           {cards.map((card, index) => {
 
-            let cardClasses = "absolute w-[300px] h-[600px] lg:w-[400px] lg:h-[700px] transition-all duration-500 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2";
+            let cardClasses = "absolute w-[275px] h-[575px] lg:w-[400px] lg:h-[700px] transition-all duration-500 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2";
             const pos = (index - current + total) % total;
 
             if (pos === 0) {
@@ -359,17 +359,17 @@ function ProjectTabs(){
       name: "MPASS",
       body:
       <div className="flex justify-center w-full flex-col">
-        <a className="text-navy text-4xl font-serif underline decoration-2 hover:text-lightgold" href="https://mizzoumotioncenter.com/technologies.html" target="_blank" rel="noreferrer">Mizzou Point-of-Care Assessment System</a>
+        <a className="text-navy text-2xl sm:text-4xl font-serif underline decoration-2 hover:text-lightgold" href="https://mizzoumotioncenter.com/technologies.html" target="_blank" rel="noreferrer">Mizzou Point-of-Care Assessment System</a>
         
         <div className="flex flex-wrap gap-4 py-10 items-start">
-          <div className="w-[560px] flex-shrink-0 flex rounded-xl overflow-hidden">
+          <div className="w-full sm:w-[560px] flex-shrink-0 flex rounded-xl overflow-hidden">
             <video className="rounded-xl" controls autoPlay muted>
               <source src="https://mizzoumotioncenter.com/MPASS_Athletic.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
 
-          <div className="min-w-[400px] flex-1 flex flex-col gap-6 text-navy font-sans text-xl">
+          <div className="max-w-[400px] flex-1 flex flex-col gap-6 text-navy font-sans text-xl">
             <p>
               The MPASS is a portable device that collects simultaneous data from three different devices (a forceplate, motion-capture camera, and reaction board) to perform clinical assessments. These assessments can aid with a variety of applications ranging from sport (athlete rehabilitation) to clinical (aids with concussion detection and mild cognitive impairment).
             </p>
@@ -389,7 +389,7 @@ function ProjectTabs(){
       <div className="flex justify-center w-full flex-col">
         <p className="text-navy text-4xl font-serif">Portfolio Website</p>
         <div className="flex flex-col w-full gap-4 py-10">
-          <div className="w-[900px] flex-shrink-0">
+          <div className="max-w-[900px] flex-shrink-0">
             <img className="object-contain w-full h-auto" src={process.env.PUBLIC_URL + '/homepage.png'} alt="Home Page of Portfolio Website"/>
           </div>
           <div className="text-navy font-sans text-xl">
@@ -406,7 +406,7 @@ function ProjectTabs(){
       <div className="flex justify-center w-full flex-col">
         <p className="text-navy text-4xl font-serif">Global Mini-VLAT</p>
         <div className="flex flex-wrap w-full gap-4 py-10">
-          <div className="w-[900px] flex-shrink-0">
+          <div className="w-full lg:w-[900px] flex-shrink-0">
             <img className="object-contain w-full h-auto" src={process.env.PUBLIC_URL + '/Ghana-VLAT.png'} alt="Choropleth map of Africa and Quiz Question"/>
           </div>
           <div className="flex flex-col gap-6 text-navy font-sans text-xl">
@@ -441,11 +441,11 @@ function ProjectTabs(){
       <div className="flex justify-center w-full flex-col">
         <a className="text-navy text-4xl font-serif underline decoration-2 hover:text-lightgold" href="https://github.com/ahkim3/MaxCard?tab=readme-ov-file" target="_blank" rel="noreferrer">MaxCard</a>
          <div className="flex flex-wrap gap-4 py-10 items-start">
-          <div className="w-[560px] flex-shrink-0 flex rounded-xl overflow-hidden">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/xsYrL3mWZew?si=IhOZxEmmlDrYquYP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen/>
+          <div className="w-full sm:h-[315px] sm:w-[560px] flex-shrink-0 flex rounded-xl overflow-hidden bg-red-200">
+            <iframe className="aspect-video" src="https://www.youtube.com/embed/xsYrL3mWZew?si=IhOZxEmmlDrYquYP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen/>
           </div>
 
-          <div className="min-w-[400px] flex-1 flex flex-col gap-6 text-navy font-sans text-xl">
+          <div className="w-full sm:min-w-[400px] flex-1 flex flex-col gap-6 text-navy font-sans text-xl">
             <p>
               Do you have multiple credit cards? If so, do you often struggle choosing the right card to maximize your credit cards' cashback?
             </p>
@@ -474,13 +474,13 @@ function ProjectTabs(){
       <div className="flex justify-center w-full flex-col">
         <a className="text-navy text-4xl font-serif underline decoration-2 hover:text-lightgold" href="https://github.com/OGuess10/EcoHolic" target="_blank" rel="noreferrer">EcoHolic</a>
         <div className="flex flex-wrap gap-4 py-10 items-start">
-          <div className="w-[300px] flex-shrink-0">
+          <div className="w-full sm:w-[300px] flex-shrink-0">
             <img className="object-contain w-full h-auto" src={process.env.PUBLIC_URL + '/ecoholic-1.png'} alt="Home Page of EcoHolic App"/>
           </div>
-          <div className="w-[300px] flex-shrink-0">
+          <div className="w-full sm:w-[300px] flex-shrink-0">
             <img className="object-contain w-full h-auto" src={process.env.PUBLIC_URL + '/ecoholic-2.png'} alt="Graph Page of EcoHolic App"/>
           </div>
-          <div className="min-w-[400px] flex-1 flex flex-col gap-6 text-navy font-sans text-xl">
+          <div className="w-full sm:min-w-[400px] flex-1 flex flex-col gap-6 text-navy font-sans text-xl">
             <p>
               Do you want to make eco-friendly choices but find it hard to stay motivated or track your impact?
 
@@ -505,11 +505,26 @@ function ProjectTabs(){
   ];
 
   const [selected, setSelected] = useState(0);
+  const [current, setCurrent] = useState(0);
+
+  const total = projects.length;
+
+  const prev = () => setCurrent((c) => (c + 1) % total);
+  const next = () => setCurrent((c) => (c - 1 + total) % total);
+
+  const handlers = useSwipeable({
+    onSwipedLeft: next,
+    onSwipedRight: prev,
+    preventDefaultTouchmoveEvent: true,
+    trackMouse: true
+  });
+
   return (
-    <div className="flex flex-col lg:flex-row w-full min-h-full shadow-xl rounded-xl bg-white my-5 p-5">
+    <>
+    <div className="hidden sm:flex flex-col lg:flex-row w-full min-h-full shadow-xl rounded-xl bg-white my-5 p-5">
 
       {/* Tabs (left side) */}
-      <div className="flex flex-row lg:flex-col w-full lg:w-48 bg-white">
+      <div className="hidden sm:flex sm:flex-row lg:flex-col w-full lg:w-48 bg-white">
         {projects.map((project, index) => (
           <button
             key={index}
@@ -533,6 +548,36 @@ function ProjectTabs(){
         {projects[selected].body}
       </div>
     </div>
+
+    {/* mobile */}
+    <div {...handlers}
+      className="sm:hidden flex flex-col w-[75vw] items-center h-[75vh] relative my-4"
+    >
+      {projects.map((project, index) => {
+
+        let cardClasses = "absolute w-full h-full p-4 bg-white rounded-xl shadow-xl transition-all duration-500 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2";
+        const pos = (index - current + total) % total;
+
+        if (pos === 0) {
+          cardClasses += " scale-100 z-20";
+        } else if (pos === 1) {
+          cardClasses += " scale-90 left-1/3 z-10 hover:scale-95 opacity-85";
+        } else if (pos === total - 1) {
+          cardClasses += " scale-90 left-2/3 z-10 hover:scale-95 opacity-85";
+        } else {
+          cardClasses += " hidden";
+        }
+
+        return (
+          <div key={index} className={cardClasses} onClick={() => pos !== 0 && setCurrent(index)}>
+            <div className="border-2 border-lightgold rounded-xl p-4 h-full overflow-auto">
+              {project.body}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+    </>
   );
 }
 
@@ -561,7 +606,7 @@ function App() {
       {/* Home Page */}
       <section
         ref={homeRef}
-        className="w-screen h-screen justify-center items-center flex flex-col overflow-auto">
+        className="max-w-screen max-h-screen justify-center items-center flex flex-col overflow-auto overscroll-x-none overflow-x-hidden">
 
         <Cards/>
 
@@ -577,52 +622,38 @@ function App() {
       {/* About Page */}
       <section
         ref={aboutRef}
-        className="min-w-screen min-h-screen justify-center items-center flex flex-col p-10">
-          {/* Body */}
-          <div className="w-full h-full gap-y-5 grid grid-cols-1 grid-rows-3 md:gap-x-5 md:grid-cols-3 md:grid-rows-1 md:gap-y-0">
-
-            {/* Photo */}
-            <div className="h-full w-full rounded-xl overflow-hidden shadow-xl">
-              <div className="bg-[url('/public/chicago-pic.png')] bg-cover bg-center h-full w-full"/>
-            </div>
-
-            {/* About Content */}
-            <div className="flex flex-row row-span-2 md:flex-col md:col-span-2 h-full w-full shadow-xl rounded-xl p-5 bg-white">
-              <div className="border-lightgold border-2 rounded-xl h-full w-full p-5 text-navy text-xl font-sans flex flex-col gap-6">
-                <p className="text-7xl font-serif font-bold mb-8">About</p>
-                <p>Hello, I'm Olivia, a Master's student in Computer Science at Washington University in St. Louis.</p>
-                <p>I am a passionate and driven student and researcher. I am currently seeking full-time, remote job opportunities in software engineering, web-development, game development, and UI/UX design.</p>
-                <p>
-                  I am a student assistant researcher at the{' '}
-                  <a href="https://visualdata.wustl.edu/" target="_blank" rel="noreferrer" className="text-navy text-xl font-sans underline decoration-1 hover:text-lightgold">VIBE Lab (Visual Interface & Behavior Exploration Lab)</a>
-                  . My current research includes topics on visualization, human-computer interaction, and visualization literacy.</p>
-                <p>
-                  I also have experience as an undergraduate student assistant researcher at the{' '}
-                  <a href="https://mizzoumotioncenter.com/" target="_blank" rel="noreferrer" className="underline decoration-1 hover:text-lightgold">MAC (Motion Analysis Center)</a>
-                  . This research included developing the software for the{' '}
-                  <a href="https://mizzoumotioncenter.com/technologies.html" target="_blank" rel="noreferrer" className="text-navy text-xl font-sans underline decoration-1 hover:text-lightgold">Mizzou Point-of-Care Assessment System (MPASS)</a>
-                  .
-                </p>
-                <p>
-                  My professional experience comes from my internship at{' '}
-                  <a href="https://www.garmin.com/en-US/" target="_blank" rel="noreferrer" className="text-naby text-xl font-sans underline decoration-1 hover:text-lightgold">Garmin International, Inc.</a>
-                  {' '}located in Olathe, Kansas. I worked as a software engineer intern and worked to develop embedded software on smartwatches.
-                </p>
-                <p>
-                  Outside of my research and education, I like to spend my free time taking ballet lessons at my local dance studio, writing stories, and playing video games with my friends.
-                </p>
-                <p>
-                  I enjoy being able to share my passion for dance with others in my community. I was a dance team coach from 2023-2024 for Hickman High School. I also was co-captain for the University of Missouri's Recreational Dance Team from 2022-2024. At WashU, I had the opportunity to perform as a member of a KPop dance group last fall. I hope to continue to dance with my community in the future!
-                </p>
-                <p>
-                  Besides dance, I was also president for the University of Missouri's UPE Computer Science Honors Society. Now, I enjoy being a part of a research lab at WashU and exploring the city.
-                </p>
-              </div>
-            </div>
-          </div>
-          <button
-          className="justify-center items-center flex animate-bounce mt-10 rounded-full text-navy text-xl hover:bg-lightgold hover:opacity-100 transition-all duration-300 size-10 py-4"
-          onClick={() => scrollToRef(skillsRef)}
+        className="w-screen min-h-screen max-w-[1440px] justify-self-center items-center flex flex-col p-10"
+      >
+        <div className="flex grow-1 shadow-xl rounded-xl p-5 bg-white">
+          <article className="border-lightgold border-2 rounded-xl p-5 text-navy text-xl font-sans">
+            <p className="basis-full text-7xl font-serif font-bold mb-4">About</p>
+            <img src={process.env.PUBLIC_URL + '/chicago-pic.png'} alt="Portrait" className="max-h-[400px] rounded-full overflow-hidden shadow-xl object-cover float-right aspect-square" />
+            <p className="py-2">Hello, I'm Olivia, a Master's student in Computer Science at Washington University in St. Louis.</p>
+            <p className="py-2">I am a passionate and driven student and researcher. I am currently seeking full-time, remote job opportunities in software engineering, web-development, game development, and UI/UX design.</p>
+            <p className="py-2">
+              I am a student assistant researcher at the{' '}
+              <a href="https://visualdata.wustl.edu/" target="_blank" rel="noreferrer" className="text-navy text-xl font-sans underline decoration-1 hover:text-lightgold">VIBE Lab (Visual Interface & Behavior Exploration Lab)</a>
+              . My current research includes topics on visualization, human-computer interaction, and visualization literacy.</p>
+            <p className="py-2">
+              I also have experience as an undergraduate student assistant researcher at the{' '}
+              <a href="https://mizzoumotioncenter.com/" target="_blank" rel="noreferrer" className="underline decoration-1 hover:text-lightgold">MAC (Motion Analysis Center)</a>
+              . This research included developing the software for the{' '}
+              <a href="https://mizzoumotioncenter.com/technologies.html" target="_blank" rel="noreferrer" className="text-navy text-xl font-sans underline decoration-1 hover:text-lightgold">Mizzou Point-of-Care Assessment System (MPASS)</a>
+              .
+            </p>
+            <p className="py-2">
+              My professional experience comes from my internship at{' '}
+              <a href="https://www.garmin.com/en-US/" target="_blank" rel="noreferrer" className="text-naby text-xl font-sans underline decoration-1 hover:text-lightgold">Garmin International, Inc.</a>
+              {' '}located in Olathe, Kansas. I worked as a software engineer intern and worked to develop embedded software on smartwatches.
+            </p>
+            <p className="py-2">
+              Outside of my research and education, I like to spend my free time taking ballet lessons at my local dance studio, writing stories, and playing video games with my friends.
+            </p>
+          </article>
+        </div>
+        <button
+        className="justify-center items-center flex animate-bounce mt-10 rounded-full text-navy text-xl hover:bg-lightgold hover:opacity-100 transition-all duration-300 size-10 py-4"
+        onClick={() => scrollToRef(skillsRef)}
         >
           &#8595;
         </button>
@@ -631,7 +662,7 @@ function App() {
       {/* Skills Page */}
       <section
         ref={skillsRef}
-        className="min-w-screen min-h-screen justify-center items-center flex p-10 my-8 py-24 flex-col">
+        className="min-h-screen max-w-[1440px] justify-self-center items-center flex p-10 my-8 py-24 flex-col">
           <p className="text-7xl font-serif text-navy font-bold flex w-full justify-start">My Skills</p>
           <div className="w-full flex flex-col items-center p-8 bg-white rounded-xl shadow-xl my-8">
             <p className="text-navy text-3xl font-serif flex justify-self-start self-start w-full">Technical Languages</p>
@@ -672,7 +703,7 @@ function App() {
       {/* Projects Page */}
       <section
         ref={projectsRef}
-        className="w-screen h-screen justify-center items-center p-10 my-8 py-24 flex flex-col">
+        className="min-h-screen max-w-[1440px] justify-self-center justify-start items-center p-10 my-8 py-24 flex flex-col">
           <p className="text-7xl font-serif text-navy font-bold flex w-full h-full justify-start self-start">Projects</p>
           <ProjectTabs />
           <button
@@ -686,7 +717,7 @@ function App() {
       {/* Contact Page */}
       <section
         ref={contactRef}
-        className="min-w-screen min-h-screen justify-center items-center flex p-10 my-8 py-24 flex-col">
+        className="min-h-screen max-w-[1440px] justify-self-center items-center flex p-10 my-8 py-24 flex-col">
           <p className="text-7xl font-serif text-navy font-bold flex w-full justify-start">Let's get in touch!</p>
           <div className="w-full flex flex-col items-center p-8 bg-white rounded-xl shadow-xl my-8">
             <p className="text-navy text-3xl font-serif flex justify-self-start self-start w-full">Contact me:</p>
