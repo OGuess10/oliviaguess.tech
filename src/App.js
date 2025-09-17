@@ -207,7 +207,7 @@ function Cards() {
           <a href="https://github.com/OGuess10" target="_blank" rel="noreferrer">
             <img src={process.env.PUBLIC_URL + '/icons/Github-22.svg'} alt="GitHub" className="h-[30px] w-[30px] hover:scale-125 transition-all duration-300" />
           </a>
-          <a href="https://www.linkedin.com/in/olivia-guess" target="_blank" rel="noreferrer">
+          <a href={process.env.PUBLIC_URL + '/OliviaGuessResume.pdf'} target="_blank" rel="noreferrer">
             <img src={process.env.PUBLIC_URL + '/icons/File-earmark-text-01.svg'} alt="Resume" className="h-[30px] w-[30px] hover:scale-125 transition-all duration-300" />
           </a>
           <a href="mailto:guesso.olivia@gmail.com" target="_blank" rel="noreferrer">
@@ -303,7 +303,7 @@ function Cards() {
                 <a href="https://github.com/OGuess10" target="_blank" rel="noreferrer">
                   <img src={process.env.PUBLIC_URL + '/icons/Github-22.svg'} alt="GitHub" className="h-[30px] w-[30px] hover:scale-125 transition-all duration-300" />
                 </a>
-                <a href="https://www.linkedin.com/in/olivia-guess" target="_blank" rel="noreferrer">
+                <a href={process.env.PUBLIC_URL + '/OliviaGuessResume.pdf'} target="_blank" rel="noreferrer">
                   <img src={process.env.PUBLIC_URL + '/icons/File-earmark-text-01.svg'} alt="Resume" className="h-[30px] w-[30px] hover:scale-125 transition-all duration-300" />
                 </a>
                 <a href="mailto:guesso.olivia@gmail.com" target="_blank" rel="noreferrer">
@@ -753,7 +753,7 @@ function App() {
                 <a
                   className="h-[150px] w-[150px] bg-white shadow-xl rounded-full p-2 hover:scale-110 transition-all duration-300"
                   aria-label="Resume"
-                  href="" target="_blank" rel="noreferrer"
+                  href={process.env.PUBLIC_URL + '/OliviaGuessResume.pdf'} target="_blank" rel="noreferrer"
                 >
                   <div className="flex flex-col gap-2 w-full h-full border-2 border-lightgold rounded-full p-2 justify-center items-center">
                     <p className="text-navy text-xl font-sans">Resume</p>
