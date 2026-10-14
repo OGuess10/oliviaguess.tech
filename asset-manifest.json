@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/oliviaguess.tech/static/css/main.1887c53e.css",
-    "main.js": "/oliviaguess.tech/static/js/main.493458da.js",
-    "static/js/453.1407b060.chunk.js": "/oliviaguess.tech/static/js/453.1407b060.chunk.js",
+    "main.css": "/oliviaguess.tech/static/css/main.44de6463.css",
+    "main.js": "/oliviaguess.tech/static/js/main.07420e70.js",
+    "static/js/453.0b72f93f.chunk.js": "/oliviaguess.tech/static/js/453.0b72f93f.chunk.js",
     "static/media/professional-photo.png": "/oliviaguess.tech/static/media/professional-photo.c3427c898c26318d10ef.png",
     "index.html": "/oliviaguess.tech/index.html",
-    "main.1887c53e.css.map": "/oliviaguess.tech/static/css/main.1887c53e.css.map",
-    "main.493458da.js.map": "/oliviaguess.tech/static/js/main.493458da.js.map",
-    "453.1407b060.chunk.js.map": "/oliviaguess.tech/static/js/453.1407b060.chunk.js.map"
+    "main.44de6463.css.map": "/oliviaguess.tech/static/css/main.44de6463.css.map",
+    "main.07420e70.js.map": "/oliviaguess.tech/static/js/main.07420e70.js.map",
+    "453.0b72f93f.chunk.js.map": "/oliviaguess.tech/static/js/453.0b72f93f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1887c53e.css",
-    "static/js/main.493458da.js"
+    "static/css/main.44de6463.css",
+    "static/js/main.07420e70.js"
   ]
 }
