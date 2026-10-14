@@ -179,26 +179,10 @@ function Cards() {
 
     <div className="bg-white shadow-xl rounded-full p-5 w-full h-full">
       <div className="h-full w-full rounded-full border-lightgold border-2 items-center justify-center flex flex-col p-10 select-none gap-2">
-        <div className="w-full min-h-36 flex flex-col justify-start pt-4">
-          <p className="text-navy text-4xl font-bold font-sans">I am a</p>
-          <ReactTyped
-            className="font-mono text-xl text-navy overflow-hidden text-start"
-            typeSpeed={40}
-            backDelay={1500}
-            backSpeed={50}
-            loop
-            strings={[
-              "CS Master's Student",
-              "Student Assistant Researcher"
-            ]}
-          />
-        </div>
-        <div className="w-full">
-          <p className="text-navy text-xl font-bold font-sans my-2">I am currently seeking full-time, remote positions in:</p>
-          <ul className="text-navy text-lg list-disc font-sans ml-4">
-            <li>Software Engineering</li>
-            <li>Frontend Development</li>
-          </ul>
+        <div className="w-full flex flex-col pt-4 items-center text-center">
+          <p className="text-navy text-4xl font-bold font-sans my-2">I'm a</p>
+          <p className="font-mono text-4xl text-navy my-2">Software Engineer</p>
+          <p className="text-navy text-2xl font-bold font-sans my-2">at Boeing</p>
         </div>
         <div className="flex w-full justify-around items-center p-4 pt-8">
           <a href="https://www.linkedin.com/in/olivia-guess" target="_blank" rel="noreferrer">
@@ -206,9 +190,6 @@ function Cards() {
           </a>
           <a href="https://github.com/OGuess10" target="_blank" rel="noreferrer">
             <img src={process.env.PUBLIC_URL + '/icons/Github-22.svg'} alt="GitHub" className="h-[30px] w-[30px] hover:scale-125 transition-all duration-300" />
-          </a>
-          <a href={process.env.PUBLIC_URL + '/OliviaGuessResume.pdf'} target="_blank" rel="noreferrer">
-            <img src={process.env.PUBLIC_URL + '/icons/File-earmark-text-01.svg'} alt="Resume" className="h-[30px] w-[30px] hover:scale-125 transition-all duration-300" />
           </a>
           <a href="mailto:guesso.olivia@gmail.com" target="_blank" rel="noreferrer">
             <img src={process.env.PUBLIC_URL + '/icons/Paper-plane-11.svg'} alt="Send Email" className="h-[30px] w-[30px] hover:scale-125 transition-all duration-300" />
@@ -274,37 +255,18 @@ function Cards() {
           
           {/* Card 1 */}
           <div className="relative flex-none w-[380px] h-[660px] bg-white shadow-xl rounded-full p-5 flex items-center justify-center transition-transform duration-300 hover:z-20 hover:scale-110">
-            <div className="h-full w-full rounded-full border-lightgold border-2 items-center justify-center flex flex-col p-10 pt-20">
+            <div className="h-full w-full rounded-full border-lightgold border-2 items-center justify-center flex flex-col p-10 pt-20 text-center">
               <div className="w-full h-1/3">
-                <p className="text-navy text-4xl font-bold font-sans my-4">I am a</p>
-                <ReactTyped
-                  className="font-mono text-xl text-navy overflow-hidden text-center"
-                  typeSpeed={40}
-                  backDelay={1500}
-                  backSpeed={50}
-                  loop
-                  strings={[
-                    "CS Master's Student",
-                    "Student Assistant Researcher"
-                  ]}
-                />
+                <p className="text-navy text-4xl font-bold font-sans my-4">I'm a</p>
+               <p className="font-mono text-4xl text-navy my-4">Software Engineer</p>
+                <p className="text-navy text-2xl font-bold font-sans my-2">at Boeing</p>
               </div>
-              <div className="w-full">
-                <p className="text-navy text-xl font-bold font-sans my-2">I am currently seeking full-time, remote positions in:</p>
-                <ul className="text-navy text-lg list-disc font-sans ml-4">
-                  <li>Software Engineering</li>
-                  <li>Frontend Development</li>
-                </ul>
-              </div>
-              <div className="flex w-full justify-around items-center p-10">
+              <div className="flex w-full justify-around items-center p-10 mt-10">
                 <a href="https://www.linkedin.com/in/olivia-guess" target="_blank" rel="noreferrer">
                   <img src={process.env.PUBLIC_URL + '/icons/Linkedin-13.svg'} alt="LinkedIn" className="h-[30px] w-[30px] hover:scale-125 transition-all duration-300" />
                 </a>
                 <a href="https://github.com/OGuess10" target="_blank" rel="noreferrer">
                   <img src={process.env.PUBLIC_URL + '/icons/Github-22.svg'} alt="GitHub" className="h-[30px] w-[30px] hover:scale-125 transition-all duration-300" />
-                </a>
-                <a href={process.env.PUBLIC_URL + '/OliviaGuessResume.pdf'} target="_blank" rel="noreferrer">
-                  <img src={process.env.PUBLIC_URL + '/icons/File-earmark-text-01.svg'} alt="Resume" className="h-[30px] w-[30px] hover:scale-125 transition-all duration-300" />
                 </a>
                 <a href="mailto:guesso.olivia@gmail.com" target="_blank" rel="noreferrer">
                   <img src={process.env.PUBLIC_URL + '/icons/Paper-plane-11.svg'} alt="Send Email" className="h-[30px] w-[30px] hover:scale-125 transition-all duration-300" />
@@ -628,12 +590,13 @@ function App() {
           <article className="border-lightgold border-2 rounded-xl p-5 text-navy text-xl font-sans">
             <p className="basis-full text-7xl font-serif font-bold mb-4">About</p>
             <img src={process.env.PUBLIC_URL + '/chicago-pic.png'} alt="Portrait" className="max-h-[400px] rounded-full overflow-hidden shadow-xl object-cover float-right aspect-square" />
-            <p className="py-2">Hello, I'm Olivia, a Master's student in Computer Science at Washington University in St. Louis.</p>
-            <p className="py-2">I am a passionate and driven student and researcher. I am currently seeking full-time, remote job opportunities in software engineering, web-development, game development, and UI/UX design.</p>
+            <p className="py-2">Hello, I'm Olivia, a software engineer at {' '}
+              <a href="https://www.boeing.com/" target="_blank" rel="noreferrer" className="text-navy text-xl font-sans underline decoration-1 hover:text-lightgold">Boeing</a> in St. Louis, Missouri.</p>
+            <p className="py-2">I have professional experience with Ada, C++, and Python. I also have experience working in an Agile environment and have worked with tools such as Jira, Git, and Gitlab.</p>
             <p className="py-2">
-              I am a student assistant researcher at the{' '}
+              I graduated from WashU with a Master's degree in Computer Science in Fall 2025. I was a student assistant researcher at the{' '}
               <a href="https://visualdata.wustl.edu/" target="_blank" rel="noreferrer" className="text-navy text-xl font-sans underline decoration-1 hover:text-lightgold">VIBE Lab (Visual Interface & Behavior Exploration Lab)</a>
-              . My current research includes topics on visualization, human-computer interaction, and visualization literacy.</p>
+              . My thesis included topics on visualization, human-computer interaction, and visualization literacy.</p>
             <p className="py-2">
               I also have experience as an undergraduate student assistant researcher at the{' '}
               <a href="https://mizzoumotioncenter.com/" target="_blank" rel="noreferrer" className="underline decoration-1 hover:text-lightgold">MAC (Motion Analysis Center)</a>
@@ -642,7 +605,7 @@ function App() {
               .
             </p>
             <p className="py-2">
-              My professional experience comes from my internship at{' '}
+              I also completed an internship at{' '}
               <a href="https://www.garmin.com/en-US/" target="_blank" rel="noreferrer" className="text-naby text-xl font-sans underline decoration-1 hover:text-lightgold">Garmin International, Inc.</a>
               {' '}located in Olathe, Kansas. I worked as a software engineer intern and worked to develop embedded software on smartwatches.
             </p>
@@ -667,11 +630,10 @@ function App() {
           <div className="w-full flex flex-col items-center p-8 bg-white rounded-xl shadow-xl my-8">
             <p className="text-navy text-3xl font-serif flex justify-self-start self-start w-full">Technical Languages</p>
             <div className="w-5/6 h-full flex flex-wrap my-5 justify-center">
+              <Circles image={process.env.PUBLIC_URL + '/icons/ada.svg'} text={'Ada'}/>
               <Circles className="group group-hover:z-50" image={process.env.PUBLIC_URL + '/icons/Python-04.svg'} text={'Python'}/>
               <Circles image={process.env.PUBLIC_URL + '/icons/C-01.svg'} text={'C/C++'}/>
               <Circles image={process.env.PUBLIC_URL + '/icons/C-Sharp-01.svg'} text={'C#'}/>
-              <Circles image={process.env.PUBLIC_URL + '/icons/JavaScript-01.svg'} text={'JavaScript'} overrides={'p-2'}/>
-              <Circles image={process.env.PUBLIC_URL + '/icons/Swift-01.svg'} text={'Swift'} overrides={'pr-2'}/>
             </div>
           </div>
           <div className="w-full flex flex-col items-center p-8 bg-white rounded-xl shadow-xl">
@@ -689,7 +651,6 @@ function App() {
               <Circles image={process.env.PUBLIC_URL + '/icons/Wolfram-mathematica-01.svg'} text={'Wolfram Mathematica'}/>
               <Circles image={process.env.PUBLIC_URL + '/icons/Linux-ubuntu-01.svg'} text={'Ubuntu/Linux'} overrides={'pr-2'}/>
               <Circles image={process.env.PUBLIC_URL + '/icons/Figma-01.svg'} text={'Figma'}/>
-              <Circles image={process.env.PUBLIC_URL + '/icons/Adobe-02.svg'} text={'Adobe Creative Suite'} overrides={'p-1'}/>
             </div>
           </div>
           <button
@@ -745,19 +706,6 @@ function App() {
                   <div className="flex flex-col gap-2 w-full h-full border-2 border-lightgold rounded-full p-2 justify-center items-center">
                     <p className="text-navy text-xl font-sans">GitHub</p>
                     <img src={process.env.PUBLIC_URL + '/icons/Github-22.svg'} alt="GitHub" className="h-[50px] w-[50px]" />
-                  </div>
-                </a>
-              </div>
-
-              <div className="motion-safe:animate-float rounded-full h-[150px] w-[150px] flex">
-                <a
-                  className="h-[150px] w-[150px] bg-white shadow-xl rounded-full p-2 hover:scale-110 transition-all duration-300"
-                  aria-label="Resume"
-                  href={process.env.PUBLIC_URL + '/OliviaGuessResume.pdf'} target="_blank" rel="noreferrer"
-                >
-                  <div className="flex flex-col gap-2 w-full h-full border-2 border-lightgold rounded-full p-2 justify-center items-center">
-                    <p className="text-navy text-xl font-sans">Resume</p>
-                    <img src={process.env.PUBLIC_URL + '/icons/File-earmark-text-01.svg'} alt="Resume" className="h-[50px] w-[50px]" />
                   </div>
                 </a>
               </div>
